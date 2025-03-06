@@ -1,0 +1,17 @@
+{
+  "name": "05_chaibackend_hin",
+  "version": "1.0.0",
+  "description": "a backend at chai and code channel",
+  "keywords": [
+    "js",
+    "backend",
+    "chai"
+  ],
+  "license": "ISC",
+  "author": "sachin singh patwal",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
