@@ -1,12 +1,24 @@
 // require("dotenv").config({path:"./env"})
 import dotenv from "dotenv";
 import connectDb from "./db/index.js";
-
+import { app } from "./app.js";
 dotenv.config({
   path: "./env",
 });
 
-connectDb();
+connectDb()
+  .then(() => {
+    app.on("error", (error) => {
+      console.log("unable to talk to database by backend");
+      throw error;
+    });
+    app.listen(process.env.PORT || 8000, () => {
+      console.log("backend is running in port", process.env.PORT);
+    });
+  })
+  .catch((error) => {
+    console.log("mongo db connection failed !!", error);
+  });
 
 /*
 import express from "express";
