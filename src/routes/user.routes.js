@@ -43,7 +43,7 @@ router
 
 router
   .route("/change-coverImage")
-  .patch(verifyJWT, upload.single(coverImage), updateAccountDetails);
+  .patch(verifyJWT, upload.single("coverImage"), updateAccountDetails);
 
 router.route("/c/:username").get(verifyJWT, getUserChannelProfile);
 
